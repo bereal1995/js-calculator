@@ -16,12 +16,9 @@ export const getSelector = (selector) => document.querySelector(selector);
  * ```
  */
 export const addEvent = (event, selector, callBackFn) => {
-  const selectors = selector.split(' ');
-  const parentEl = getSelector(selectors[0]);
-  return parentEl.addEventListener(event, (e) => {
-    const childEl = e.target.closest(selectors[1]);
+  return document.body.addEventListener(event, (e) => {
+    const childEl = e.target.closest(selector);
     if (!childEl) return;
-
     callBackFn(e.target);
   });
 };

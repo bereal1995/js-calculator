@@ -22,11 +22,7 @@ export const getCalculateStep = (operators, calculateStep) => (operators[calcula
 export const addDigitNumber = (digits, calculateStep, addDigit) => {
   const digit = digits[calculateStep];
   if (!digit) {
-    if (digits.length) {
-      digits.push(addDigit);
-      return digits;
-    }
-    return [addDigit];
+    return [...digits, addDigit];
   }
 
   digits[calculateStep] = digit + addDigit;

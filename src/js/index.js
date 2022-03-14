@@ -11,7 +11,7 @@ const initState = {
 
 function App() {
   // 상태값 정의
-  this.state = initState;
+  this.state = { ...initState };
 
   // 상태값 설정 함수
   const setState = (newState) => {
@@ -35,7 +35,7 @@ function App() {
 
   // 상태값 초기화 함수
   const resetState = () => {
-    this.state = initState;
+    this.state = { ...initState };
   };
 
   // 계산하는 함수
